@@ -69,4 +69,8 @@ public class Doctor {
     public int getTime() {
         return timePerPatient;
     }
+
+    public Schedule getSchedule() {
+        return schedule;
+    }
 }

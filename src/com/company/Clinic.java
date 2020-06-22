@@ -14,8 +14,8 @@ public class Clinic {
         this.name = name;
         // create two schedule
         ArrayList<Schedule> schedules = new ArrayList<>(2);
-        schedules.add(new Schedule("First",8, 15));
-        schedules.add(new Schedule("Second",15, 22));
+        schedules.add(new Schedule("First",120, 540));  // 08:00 - 15:00
+        schedules.add(new Schedule("Second",540, 960)); // 15:00 - 22:00
 
         Random rand = new Random();
         this.cabinetCount = rand.nextInt(maxCabinetCount) + 1;

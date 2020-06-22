@@ -1,9 +1,10 @@
 package com.company;
 
 public enum PatientPriority {
-    veteran,
-    invalid,
-    pensioner,
+    acutePain,
     pregnant,
-    acutePain
+    pensioner,
+    invalid,
+    veteran,
+    noPriority
 }

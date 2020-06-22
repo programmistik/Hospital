@@ -13,16 +13,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int maxPatientCount = 100;
+        int maxPatientCount = 100000;
 
      // создаем клинику, врачей и кабинеты
 
         myClinic = new Clinic("Diana Hospital");
 
         // если в кабинете более двух врачей, отправим одного в отпуск
-      /*  for (Cabinet cab: myClinic.getCabinets()) {
+        for (Cabinet cab: myClinic.getCabinets()) {
             if(cab.getDocCount() > 2) cab.getDoctors().get(2).sendToVacation();
-        }*/
+        }
 
         // начинаем
         System.out.println("Welcome to "+ myClinic.getName());
@@ -55,10 +55,13 @@ public class Main {
                         // Начало приема
                       //  System.out.println("Начало приема");
                         for (Cabinet cab: myClinic.getCabinets()) {
-                            if (cab.getNextPatient() != null) { // если есть пациент в очереди
-                                Patient pat = cab.getNextPatient();
-                                while (cab.getFreeDoctor() != null) {
-                                    Doctor doc = cab.getFreeDoctor();
+                            Patient pat = cab.getNextPatient();
+
+                            if (pat != null) { // если есть пациент в очереди
+
+                                Doctor doc = cab.getFreeDoctor(currentTime);
+                                if (doc != null) {
+
                                     doc.setHasPacient(pat);
                                     Runnable r = new Reception(doc);
                                     Thread newThread = new Thread(r);

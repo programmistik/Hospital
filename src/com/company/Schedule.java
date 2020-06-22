@@ -14,4 +14,13 @@ public class Schedule {
     public String getName() {
         return name;
     }
+
+    public int getStartHour() {
+        return startHour;
+    }
+
+    public int getEndHour() {
+        return endHour;
+    }
+
 }
